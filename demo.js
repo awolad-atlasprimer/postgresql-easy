@@ -15,18 +15,18 @@ async function doIt() {
     await pg.deleteAll(tableName);
 
     const id1 = await pg.insert(
-      tableName, {username: 'batman', password: 'robin'});
+      tableName, { username: 'batman', password: 'robin' });
     console.log('id1 =', id1);
 
     const id2 = await pg.insert(
-      tableName, {username: 'joker', password: 'penguin'});
+      tableName, { username: 'joker', password: 'penguin' });
     console.log('id2 =', id2);
 
     let rows = await pg.getAll(tableName);
     console.log('all =', rows);
 
     await pg.updateById(
-      tableName, id1, {username: 'batman', password: 'wayne'});
+      tableName, id1, { username: 'batman', password: 'wayne' });
 
     const row = await pg.getById(tableName, id1);
     console.log('just id1 after update =', row);

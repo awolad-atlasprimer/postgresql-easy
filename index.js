@@ -95,7 +95,7 @@ class PgConnection {
           if (err) {
             reject(err);
           } else {
-            const {rowCount, rows} = result;
+            const { rowCount, rows } = result;
             resolve(rowCount ? rows : []);
           }
         });
